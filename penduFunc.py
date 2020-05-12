@@ -87,12 +87,14 @@ def displayAdvancement(hangingStages,N_error,word,lettersFound):
     """
         Affiche l'avancement du pendu et de la découverte du mot.
     
-        :param arg1: Etat du pendu.
-        :param arg2: Mot à deviner.
-        :param arg3: Lettres déjà trouvées.
+        :param arg1: Liste des états du pendus.
+        :param arg2: Nombre d'erreurs faîtes par l'utilisateur.
+        :param arg3: Mot à deviner.
+        :param arg4: Lettres déjà trouvées.
         :type arg1: str
-        :type arg2: str
+        :type arg2: int
         :type arg3: str
+        :type arg4: str
     """
     if N_error == len(hangingStages)-1:
         wordReveal = " ".join([letter.upper() for letter in word])
