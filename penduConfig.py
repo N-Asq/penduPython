@@ -21,6 +21,7 @@ wordList = ["feuillages",
 
 hangingStages = list()
 hangingStages.append("  ________\n  |      |\n  |      O\n  |    --|--\n  |     / \\\n__|__")
+hangingStages.append("  ________\n  |      |\n  |      O\n  |    --|--\n  |     /\n__|__")
 hangingStages.append("  ________\n  |      |\n  |      O\n  |    --|--\n  |\n__|__")
 hangingStages.append("  ________\n  |      |\n  |      O\n  |      |\n  |\n__|__")
 hangingStages.append("  ________\n  |      |\n  |      O\n  |\n  |\n__|__")

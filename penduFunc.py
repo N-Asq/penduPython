@@ -5,8 +5,8 @@ def checkScoreFile(scoreFile = "penduScores.py"):
     """
         Regarde si le fichier de scores existe, et le créé dans le cas contraire.
 
-        :param arg1: Fichier de scores à chercher.
-        :type arg1: str
+        :param scoreFile: Fichier de scores à chercher.
+        :type scoreFile: str
         :return: Fichier de scores utilisé pour stocker les scores du joueur.
         :rtype: str
     """
@@ -37,8 +37,8 @@ def getTag(scoreFile = "penduScores.py"):
         Demande à l'utilisateur son pseudo, vérifie si ce dernier est dans le fichier de scores,
         le créée si ce n'est pas le cas, et renvoie le pseudo à utiliser.
 
-        :param arg1: Fichier de scores à utiliser.
-        :type arg1: str
+        :param scoreFile: Fichier de scores à utiliser.
+        :type scoreFile: str
         :return: Pseudo de l'utilisateur
         :rtype: str
     """
@@ -75,8 +75,8 @@ def chooseWord(wordList):
     """
         Choisis aléatoirement le mot à faire deviner à l'utilisateur dans une liste.
     
-        :param arg1: Liste de mots.
-        :type arg1: list
+        :param wordList: Liste de mots.
+        :type wordList: list
         :return: Le mot à faire deviner en minuscules.
         :rtype: str
     """
@@ -87,14 +87,14 @@ def displayAdvancement(hangingStages,N_error,word,lettersFound):
     """
         Affiche l'avancement du pendu et de la découverte du mot.
     
-        :param arg1: Liste des états du pendus.
-        :param arg2: Nombre d'erreurs faîtes par l'utilisateur.
-        :param arg3: Mot à deviner.
-        :param arg4: Lettres déjà trouvées.
-        :type arg1: str
-        :type arg2: int
-        :type arg3: str
-        :type arg4: str
+        :param hangingStages: Liste des états du pendus.
+        :param N_error: Nombre d'erreurs faîtes par l'utilisateur.
+        :param word: Mot à deviner.
+        :param lettersFound: Lettres déjà trouvées.
+        :type hangingStages: str
+        :type N_error: int
+        :type word: str
+        :type lettersFound: str
     """
     if N_error == len(hangingStages)-1:
         wordReveal = " ".join([letter.upper() for letter in word])
@@ -117,12 +117,12 @@ def updatePoints(scoreFile,tag,points):
     """
         Met à jour les points dans le fichier de score. Si points == 0, divise le score par 2. 
     
-        :param arg1: Fichier de score à utiliser.
-        :param arg2: Pseudo de l'utilisateur.
-        :param arg3: Points à ajouter.
-        :type arg1: str
-        :type arg2: str
-        :type arg3: int
+        :param scoreFile: Fichier de score à utiliser.
+        :param tag: Pseudo de l'utilisateur.
+        :param points: Points à ajouter.
+        :type scoreFile: str
+        :type tag: str
+        :type points: int
     """
     import math
     import pickle
@@ -148,14 +148,14 @@ def getValidResponse(questionMessage, validChoices = ["Y","N"], errorMessage = "
     """
         Pose à l'utilisateur la même question en boucle, jusqu'à ce que la réponse renseignée fasse partie des choix valides.
     
-        :param arg1: Question à poser.
-        :param arg2: Liste des réponses valides. Seuls les éléments de type str seront pris en compte.
-        :param arg3: Message indiquant une réponse invalide.
-        :param arg4: Rendre la réponse sensible à la casse.
-        :type arg1: str
-        :type arg2: list
-        :type arg1: str
-        :type arg1: bool
+        :param questionMessage: Question à poser.
+        :param validChoices: Liste des réponses valides. Seuls les éléments de type str seront pris en compte.
+        :param errorMessage: Message indiquant une réponse invalide.
+        :param caseSensitive: Rendre la réponse sensible à la casse.
+        :type questionMessage: str
+        :type validChoices: list
+        :type errorMessage: str
+        :type caseSensitive: bool
         :return: La réponse valide de l'utilisateur.
         :rtype: str
     """

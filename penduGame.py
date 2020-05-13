@@ -27,10 +27,10 @@ while playAgainOK:
     wordFoundOK = False
     while points > 0 and not wordFoundOK:
         displayAdvancement(hangingStages,N_error,word,lettersFound)
-        print("{0} tentatives restantes...".format(points))
+        print("{0} points restants...".format(points))
         letter = getLetter()
         if letter in word:
-            lettersFound += letter
+            lettersFound = str(set(lettersFound+letter))
         else:
             print("\nCette lettre ne fait pas partie du mot, un pas de plus vers la mort.")
             N_error += 1
